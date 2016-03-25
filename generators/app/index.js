@@ -18,6 +18,11 @@ const QUESTIONS = [{
   message: 'Your GitHub username'
 }, {
   type: 'input',
+  name: 'module:scope',
+  message: 'The package scope',
+  default: 'clef'
+}, {
+  type: 'input',
   name: 'module:author:fullName',
   message: 'Your full name'
 }, {
@@ -76,6 +81,10 @@ module.exports = class AppGenerator extends Base {
     this.log(yosay('Welcome to the extraordinary ES6 npm module generator!'));
     this.prompt(QUESTIONS, answers => {
       this.answers = answers;
+      this.answers['module:scoped-name'] = this.answers['module:scoped-name'];
+      if (this.answers['module:scope']) {
+        this.answers['module:scoped-name'] = '@' + this.answers['module:scope'] + '/' + this.answers['module:name']
+      }
 
       fetchLicense.call(this, this.answers['module:license'], content => {
         this.write('LICENSE', content);
@@ -94,6 +103,7 @@ module.exports = class AppGenerator extends Base {
     this.copy('package.json', 'package.json');
     this.copy('README.md', 'README.md');
     this.copy('travis.yml', '.travis.yml');
+    this.copy('webpack.config.js', 'webpack.config.js');
   }
 
   install() {

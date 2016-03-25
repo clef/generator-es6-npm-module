@@ -16,13 +16,13 @@
 Install it via npm:
 
 ```shell
-npm install <%= answers['module:name'] %>
+npm install <%= answers['module:scoped-name'] %>
 ```
 
 And include in your project:
 
 ```javascript
-import <%= answers['module:name'] %> from '<%= answers['module:name'] %>';
+import <%= answers['module:name'] %> from '<%= answers['module:scoped-name'] %>';
 ```
 
 ## License
