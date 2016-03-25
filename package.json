@@ -1,5 +1,5 @@
 {
-  "name": "generator-es6-npm-module",
+  "name": "@clef/generator-es6-npm-module",
   "version": "0.0.0-semantic-release",
   "description": "Yeoman generator for starting ES6 npm module with Mocha, Istanbul, Travis, Coveralls",
   "license": "MIT",
