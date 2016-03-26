@@ -6,12 +6,12 @@
   "main": "generators/app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ghaiklor/generator-es6-npm-module.git"
+    "url": "https://github.com/clef/generator-es6-npm-module.git"
   },
   "author": {
-    "name": "Eugene Obrezkov",
-    "email": "ghaiklor@gmail.com",
-    "url": "https://github.com/ghaiklor"
+    "name": "Jesse Pollak",
+    "email": "jesse@getclef.com",
+    "url": "https://github.com/jessepollak"
   },
   "scripts": {
     "coveralls": "cat coverage/lcov.info | coveralls",
