@@ -99,7 +99,12 @@ module.exports = class AppGenerator extends Base {
 
   writing() {
     this.directory('src', 'src');
-    this.directory('test', 'test');
+
+    this.directory('spec', 'spec');
+    this.copy('base.spec.js', 'spec/' + this.answers['module:name'] + '.spec.js');
+    this.copy('tests.bundle.js', 'tests.bundle.js');
+    this.copy('karma.conf.js', 'karma.conf.js');
+
     this.copy('babelrc', '.babelrc');
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');
