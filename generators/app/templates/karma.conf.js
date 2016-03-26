@@ -5,7 +5,11 @@ delete webpackConfig.entry
 delete webpackConfig.output
 
 webpackConfig.postLoaders = [{
+  <%_ if (answers['module:coffee']) { _%>
   test: /\.(js|coffee)$/,
+  <%_ } else { _%>
+  test: /\.(js)$/,
+  <%_ } _%>
   exclude: /(spec|node_modules)\//,
   loader: 'istanbul-instrumenter'
 }]

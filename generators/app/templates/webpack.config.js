@@ -9,7 +9,9 @@ module.exports = {
   },
   module: {
     loaders: [
+      <%_ if (answers['module:coffee']) { _%>
       { test: /\.coffee$/, loader: 'coffee-loader' },
+      <%_ } _%>
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -20,6 +22,13 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee']
+    extensions: [
+      '',
+      '.js',
+      '.json',
+      <%_ if (answers['module:coffee']) { _%>
+      '.coffee'
+      <%_ } _%>
+    ]
   }
 };

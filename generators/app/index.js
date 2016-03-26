@@ -15,7 +15,13 @@ const QUESTIONS = [{
 }, {
   type: 'input',
   name: 'module:author:nickname',
-  message: 'Your GitHub username'
+  message: 'Your GitHub username',
+  store: true
+}, {
+  type: 'input',
+  name: 'module:author:fullName',
+  message: 'Your full name',
+  store: true
 }, {
   type: 'input',
   name: 'module:scope',
@@ -25,10 +31,18 @@ const QUESTIONS = [{
   type: 'input',
   name: 'module:github',
   message: 'The username/name Github combo where the module is published.',
+  default: (answers) => {
+    if (answers['module:scope']) {
+      return `${answers['module:scope']}/${answers['module:name']}`
+    } else {
+      return `${answers['module:username']}/${answers['module:name']}`
+    }
+  }
 }, {
-  type: 'input',
-  name: 'module:author:fullName',
-  message: 'Your full name'
+  type: 'confirm',
+  name: 'module:coffee',
+  message: 'Would you like to support CoffeeScript in this module?',
+  default: false
 }, {
   type: 'list',
   name: 'module:license',

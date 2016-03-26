@@ -1,6 +1,6 @@
 # generator-es6-npm-module
 
-This generator creates an npm-compatible module with support for ES6, CoffeeScript, Webpack (building), Mocha (testing), Chai (assertion), Karma (test running), and TravisCI (continuous integration).
+This generator creates an npm-compatible module with support for ES6, Webpack (building), Mocha (testing), Chai (assertion), Karma (test running), and TravisCI (continuous integration).
 
 Out of the box, you'll get green tests with coverage and helpful NPM scripts for versioning and publishing.
 
