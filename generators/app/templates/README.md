@@ -1,7 +1,6 @@
 # <%= answers['module:name'] %>
 
 ![Build Status](https://img.shields.io/travis/<%= answers['module:github'] %>.svg)
-![Coverage](https://img.shields.io/coveralls/<%= answers['module:github'] %>.svg)
 ![Downloads](https://img.shields.io/npm/dm/<%= answers['module:scoped-name'] %>.svg)
 ![Downloads](https://img.shields.io/npm/dt/<%= answers['module:scoped-name'] %>.svg)
 ![npm version](https://img.shields.io/npm/v/<%= answers['module:scoped-name'] %>.svg)
