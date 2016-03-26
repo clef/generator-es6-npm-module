@@ -10,7 +10,7 @@
 
 <%= answers['module:description'] %>
 
-## Getting Started
+## Installation
 
 Install it via npm:
 
@@ -18,11 +18,30 @@ Install it via npm:
 npm install <%= answers['module:scoped-name'] %>
 ```
 
-And include in your project:
+## Usage
 
 ```javascript
 import <%= answers['module:name'] %> from '<%= answers['module:scoped-name'] %>';
+
+/*
+*
+* Add more usage information here.
+* Good code is bad unless it's documented.
+*
+*/
 ```
+
+## Development
+
+To start development, run:
+
+```shell
+git clone git@github.com:<%= answers['module:github'] %>.git <%= answers['module:name'] %>
+cd <%= answers['module:name'] %>
+npm install
+npm run test
+```
+
 
 ## License
 
