@@ -1,6 +1,6 @@
 {
   "name": "@clef/generator-es6-npm-module",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "Yeoman generator for starting ES6 npm module with Mocha, Istanbul, Travis, Coveralls",
   "license": "MIT",
   "main": "generators/app/index.js",
