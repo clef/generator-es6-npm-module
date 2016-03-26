@@ -23,6 +23,10 @@ const QUESTIONS = [{
   default: 'clef'
 }, {
   type: 'input',
+  name: 'module:github',
+  message: 'The username/name Github combo where the module is published.',
+}, {
+  type: 'input',
   name: 'module:author:fullName',
   message: 'Your full name'
 }, {

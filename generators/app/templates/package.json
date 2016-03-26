@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "author": "<%= answers['module:author:nickname'] %>",
-  "repository": "<%= answers['module:author:nickname'] %>/<%= answers['module:name'] %>",
+  "repository": "<%= answers['module:github'] %>",
   "license": "<%= answers['module:license'] %>",
   "scripts": {
     "compile": "webpack",
