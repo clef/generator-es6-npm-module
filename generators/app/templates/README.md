@@ -7,7 +7,7 @@
 ![npm version](https://img.shields.io/npm/v/<%= answers['module:scoped-name'] %>.svg)
 ![dependencies](https://img.shields.io/david/<%= answers['module:github'] %>.svg)
 ![dev dependencies](https://img.shields.io/david/dev/<%= answers['module:github'] %>.svg)
-![License](https://img.shields.io/npm/l/<%= answers['module:scoped-name'] %>.svg)
+![License](https://img.shields.io/github/license/<%= answers['module:github'] %>.svg)
 
 <%= answers['module:description'] %>
 
