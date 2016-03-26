@@ -1,7 +1,11 @@
 module.exports = {
   entry: './src/index.js',
   // add any external libraries that we require here
-  externals: [ ],
+  externals: [
+    <%_ if (answers['module:react']) { _%>
+    "react"
+    <%_ } _%>
+  ],
   output: {
     filename: 'lib/index.js',
     library: '<%= answers['module:name'] %>',
@@ -16,7 +20,12 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: [
+            'es2015',
+            <%_ if (answers['module:react']) { _%>
+            'react'
+            <%_ } _%>
+          ]
         }
       }
     ]

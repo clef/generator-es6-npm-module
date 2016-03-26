@@ -44,6 +44,11 @@ const QUESTIONS = [{
   message: 'Would you like to support CoffeeScript in this module?',
   default: false
 }, {
+  type: 'confirm',
+  name: 'module:react',
+  message: 'Is this a React component?',
+  default: false
+}, {
   type: 'list',
   name: 'module:license',
   message: 'Choose a license',
