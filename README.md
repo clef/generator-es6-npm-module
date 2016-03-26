@@ -1,6 +1,8 @@
 # generator-es6-npm-module
 
-This generator creates empty npm module with integrated Travis and Coveralls services. It uses webpack and supports compilation of .coffee and ES6 javascript.
+This generator creates an npm-compatible module with support for ES6, CoffeeScript, Webpack (building), Mocha (testing), Chai (assertion), Karma (test running), and TravisCI (continuous integration).
+
+Out of the box, you'll get green tests with coverage and helpful NPM scripts for versioning and publishing.
 
 ## Getting Started
 
@@ -24,15 +26,14 @@ When project is generated you will get project with that structure:
 |-- my-project
   |-- src
   |  |-- index.js
-  |-- test
-  |  |-- unit
-  |  |  |-- index.test.js
-  |  |-- mocha.opts
+  |-- spec
+  |  |-- my-project.spec.js
   |-- .babelrc
   |-- .editorconfig
   |-- .gitignore
   |-- .npmignore
   |-- .travis.yml
+  |-- karma.conf.js
   |-- package.json
   |-- webpack.config.js
   |-- LICENSE

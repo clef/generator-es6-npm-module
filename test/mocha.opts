@@ -1,4 +1,0 @@
-./test/unit/**/*.test.js
---timeout 20000
---reporter nyan
---recursive
