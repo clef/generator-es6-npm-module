@@ -39,3 +39,47 @@ When project is generated you will get project with that structure:
   |-- LICENSE
   |-- README.md
 ```
+
+## Common questions
+
+### How do I develop two packages at once?
+
+_npm_ provides good tooling for developing many packages at once. You're likely in the following situation:
+
+* You have `package-b` which depends on `package-b`
+* You'd like to work on them at the same time
+
+To achieve this, we will `npm link package-b` into the global space and then link it back into `package-a`. Follow these steps:
+
+```shell
+cd /path/to/package-b
+npm link
+cd /path/to/package-a
+npm link package-b
+```
+
+You can read more about `npm link` [here](https://docs.npmjs.com/cli/link).
+
+## Known issues
+
+### Duplicate module import
+
+This issue crops up in the following situation:
+
+* We have two packages `package-a` and `package-b` which both depend on `react` (or another module)
+* We `npm link package-a` into `package-b`
+* We try build `package-a` with `browserify`
+
+In this situation, `react` will be loaded twice in the `browserify` bundle. 
+
+To fix this, follow the steps outlined [here](https://github.com/webpack/webpack/issues/966#issuecomment-95491120).
+
+```shell
+cd /path/to/project-b
+cd node_modules/react
+npm link
+cd /path/to/project-a
+npm link react
+```
+
+This issue only affects packages when thay are connected using `npm link`.
