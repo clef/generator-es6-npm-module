@@ -70,6 +70,12 @@ This issue crops up in the following situation:
 * We `npm link package-a` into `package-b`
 * We try build `package-a` with `browserify`
 
+It will manifest as this error:
+
+```
+Uncaught Invariant Violation: addComponentAsRefTo(...): Only a ReactOwner can have refs. You might be adding a ref to a component that was not created inside a component's `render` method, or you have multiple copies of React loaded (details: https://fb.me/react-refs-must-have-owner).
+```
+
 In this situation, `react` will be loaded twice in the `browserify` bundle. 
 
 To fix this, follow the steps outlined [here](https://github.com/webpack/webpack/issues/966#issuecomment-95491120).
