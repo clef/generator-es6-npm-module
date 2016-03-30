@@ -9,11 +9,14 @@ var precss = require('precss')
 
 module.exports = {
   entry: './src/index.js',
-  // Make all dependencies external by default. The only reason you would
+  // Make all peerDependencies external by default. The only reason you would
   // not want to do this is if you were building a library for distribution
   // as a standalone file, rather than a module that will later be built
   // with a build tool like Webpack or Browserify
-  externals: packageJSON.dependencies ? Object.keys(packageJSON.dependencies) : [],
+  //
+  // For more information on when to use peerDependencies vs. dependencies,
+  // please consult the README.
+  externals: packageJSON.peerDependencies ? Object.keys(packageJSON.peerDependencies) : [],
   output: {
     path: path.join(__dirname, 'lib'),
     filename: 'lib/index.js',

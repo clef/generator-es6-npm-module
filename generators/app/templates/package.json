@@ -22,6 +22,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
+    "react": "^0.14.7",
     <%_ } _%>
     <%_ if (answers['module:coffee']) { _%>
     <%_ if (answers['module:react']) { _%>
@@ -54,7 +55,7 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     <%_ if (answers['module:react']) { _%>
     "react": "^0.14.7"
     <%_ } _%>

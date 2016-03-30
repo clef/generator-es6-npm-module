@@ -60,6 +60,15 @@ npm link package-b
 
 You can read more about `npm link` [here](https://docs.npmjs.com/cli/link).
 
+### When do I add to "dependencies" vs. a "peerDependencies"?
+
+Because our build system uses both Webpack and Browserify, we can run into issues where dependencies are built into our distributed source twice. This is very bad. To address this, we use `peerDependencies` extensively.
+
+* `peerDependencies` - any module that is shared by one or more of our components should be added to `peerDependencies`. If you add a module to `peerDependencies`, you should also add it to `devDependencies`, so that it will be installed for testing and development (`peerDependencies` are not installed by default in npm > 3).
+* `dependencies` - any module that _only_ this component relies on should be added to `dependencies`.
+
+This is a pain in the butt and we are working on a solution.
+
 ## Known issues
 
 ### Duplicate module import
