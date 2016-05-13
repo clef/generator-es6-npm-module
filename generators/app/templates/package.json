@@ -15,6 +15,9 @@
     "postpublish": "git push origin master && git push --tags",
     "test": "karma start --single-run --browsers PhantomJS"
   },
+  "publishConfig": {
+    "access": "<%= answers['module:access'] %>"
+  },
   "devDependencies": {
     <%_ if (answers['module:react']) { _%>
     "autoprefixer": "^6.3.4",

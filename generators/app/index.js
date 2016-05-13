@@ -28,6 +28,15 @@ const QUESTIONS = [{
   message: 'The package scope',
   default: 'clef'
 }, {
+  type: 'list',
+  name: 'module:access',
+  message: 'Would you like this module to be public or private?',
+  default: 'private',
+  choices: [
+    'public',
+    'private'
+  ]
+}, {
   type: 'input',
   name: 'module:github',
   message: 'The username/name Github combo where the module is published.',
