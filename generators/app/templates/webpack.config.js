@@ -23,7 +23,7 @@ module.exports = {
   externals: packageJSON.peerDependencies ? Object.keys(packageJSON.peerDependencies) : [],
   output: {
     path: path.join(__dirname, 'lib'),
-    filename: 'lib/index.js',
+    filename: 'index.js',
     library: '<%= answers['module:name'] %>',
     libraryTarget: 'umd',
   },
