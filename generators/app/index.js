@@ -141,6 +141,7 @@ module.exports = class AppGenerator extends Base {
     this.copy('tests.bundle.js', 'tests.bundle.js');
     this.copy('karma.conf.js', 'karma.conf.js');
 
+    this.copy('eslintrc.json', '.eslintrc.json');
     this.copy('babelrc', '.babelrc');
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');

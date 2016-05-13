@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard"<%_ if (answers['module:react']) { _%>, "standard-react" <%_ } _%>
+  ],
+  "plugins": [
+    "babel"
+  ],
+  "rules": {
+    "babel/generator-star-spacing": 1
+  },
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "globals": {
+    "chai": true,
+    "expect": true,
+    "sinon": true
+  }
+}
