@@ -58,6 +58,11 @@ const QUESTIONS = [{
   message: 'Is this a React component?',
   default: false
 }, {
+  type: 'confirm',
+  name: 'module:jql',
+  message: 'Is this a JQL query?',
+  default: false
+}, {
   type: 'list',
   name: 'module:license',
   message: 'Choose a license',
@@ -126,7 +131,11 @@ module.exports = class AppGenerator extends Base {
   }
 
   writing() {
-    this.directory('src', 'src');
+    if (this.answers['module:jql']) {
+      this.copy('src/index.js', 'src/index.jql')
+    } else {
+      this.copy('src/index.js', 'src/index.js')
+    }
 
     this.directory('spec', 'spec');
     this.copy('base.spec.js', 'spec/' + this.answers['module:name'] + '.spec.js');

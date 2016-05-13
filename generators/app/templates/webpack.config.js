@@ -8,7 +8,11 @@ var precss = require('precss')
 <%_ } %>
 
 module.exports = {
+  <%_ if (answers['module:jql']) { _%>
+  entry: './src/index.jql',
+  <%_ } else { _%>
   entry: './src/index.js',
+  <%_ } _%>
   // Make all peerDependencies external by default. The only reason you would
   // not want to do this is if you were building a library for distribution
   // as a standalone file, rather than a module that will later be built
@@ -24,6 +28,11 @@ module.exports = {
     libraryTarget: 'umd',
   },
   module: {
+    preLoaders: [{
+      test: /\.(js|jql)$/,
+      exclude: /node_modules|\.tmp|vendor/,
+      loader: 'eslint-loader'
+    }],
     loaders: [
       <%_ if (answers['module:react']) { %>
       {
@@ -57,7 +66,13 @@ module.exports = {
             <%_ } _%>
           ]
         }
+      },
+      <%_ if (answers['module:jql']) { %>
+      {
+        test: /\.jql$/,
+        loader: 'jql-loader'
       }
+      <% } %>
     ]
   },
   resolve: {
