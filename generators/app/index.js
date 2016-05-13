@@ -25,8 +25,7 @@ const QUESTIONS = [{
 }, {
   type: 'input',
   name: 'module:scope',
-  message: 'The package scope',
-  default: 'clef'
+  message: 'The package scope'
 }, {
   type: 'list',
   name: 'module:access',
@@ -44,7 +43,7 @@ const QUESTIONS = [{
     if (answers['module:scope']) {
       return `${answers['module:scope']}/${answers['module:name']}`
     } else {
-      return `${answers['module:username']}/${answers['module:name']}`
+      return `${answers['module:author:nickname']}/${answers['module:name']}`
     }
   }
 }, {
