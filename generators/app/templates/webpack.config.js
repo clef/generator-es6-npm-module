@@ -3,7 +3,7 @@ var webpack = require('webpack')
 var packageJSON = require('./package.json')
 <%_ if (answers['module:react']) { _%>
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var autoprefix = require('autoprefixer')
+var autoprefixer = require('autoprefixer')
 var precss = require('precss')
 <%_ } %>
 
@@ -36,11 +36,10 @@ module.exports = {
     loaders: [
       <%_ if (answers['module:react']) { %>
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
-          "css-loader?modules&importLoaders=1",
-          "postcss-loader"
+          "css-loader?modules&importLoaders=1!postcss-loader"
         )
       },
       <%_ } %>,
@@ -81,14 +80,15 @@ module.exports = {
       '.js',
       '.json',
       <%_ if (answers['module:coffee']) { _%>
-      '.coffee'
+      '.coffee',
+      <%_ } _%>
+      <%_ if (answers['module:react']) { _%>
+      '.css',
       <%_ } _%>
     ]
   },
   <%_ if (answers['module:react']) { _%>
-  postcss: function() {
-    return [autoprefixer, precss]
-  },
+  postcss: [autoprefixer(), precss()],
   plugins: [
     new ExtractTextPlugin("style.css", { allChunks: true })
   ]
