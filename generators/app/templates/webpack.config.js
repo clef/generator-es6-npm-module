@@ -56,15 +56,7 @@ module.exports = {
       <%_ } _%>
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            'es2015',
-            <%_ if (answers['module:react']) { _%>
-            'react'
-            <%_ } _%>
-          ]
-        }
+        loader: 'babel-loader'
       },
       <%_ if (answers['module:jql']) { %>
       {
