@@ -7,7 +7,12 @@ var autoprefixer = require('autoprefixer')
 var precss = require('precss')
 <%_ } %>
 
+var isDevelopment = process.env.NODE_ENV != "production"
+
 module.exports = {
+  debug: isDevelopment,
+  cache: isDevelopment,
+  devtool: isDevelopment ? 'cheap-module-eval-source-map' : '',
   <%_ if (answers['module:jql']) { _%>
   entry: './src/index.jql',
   <%_ } else { _%>
