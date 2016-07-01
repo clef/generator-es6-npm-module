@@ -117,7 +117,7 @@ module.exports = class AppGenerator extends Base {
     this.log(yosay('Welcome to the extraordinary ES6 npm module generator!'));
     this.prompt(QUESTIONS, answers => {
       this.answers = answers;
-      this.answers['module:scoped-name'] = this.answers['module:scoped-name'];
+      this.answers['module:scoped-name'] = this.answers['module:name'];
       if (this.answers['module:scope']) {
         this.answers['module:scoped-name'] = '@' + this.answers['module:scope'] + '/' + this.answers['module:name']
       }
